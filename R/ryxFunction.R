@@ -1,3 +1,39 @@
+#' @title ryx function
+#'
+#' @description
+#' This package deals with correlation among variables.
+#'
+#' \code{ryx} calculates correlations between one outcome variable and a group
+#' of independent variables, respectively, as well as significance of the correlations.
+#' The final result is reported in the form of a correlation table.
+#'
+#' @details
+#' Three generic functions (\code{print.ryx},\code{summary.ryx},\code{plot.ryx}) are
+#' implemented. These functions can be used to report table of ryx class.
+#'
+#' @param data data frame
+#' @param y variable used as the outcome variable in correlations
+#' @param x a vector of independent variables
+#'
+#' @import stringr
+#' @import ggplot2
+#'
+#' @export
+#' @return a data frame
+#'
+#' @examples
+#' # create a ryx object
+#' x <- ryx(MASS::Boston, y = medv)
+#'
+#' # generic functions
+#' print(x)
+#' summary(x)
+#' plot(x)
+#'
+#' # report error message if imput is not class ryx
+#' print.ryx(mtcars)
+#'
+
 ryx <- function(data, y, x){
   if(missing(x)){
     x <- names(data)[sapply(data, class)=="numeric"]
@@ -21,13 +57,9 @@ ryx <- function(data, y, x){
   return(results)
 }
 
-library(MASS)
-x <- ryx(Boston, y="medv")
-
 print.ryx <- function(x){
   if(!inherits(x, "ryx")) stop("Must be class 'ryx'")
 
-  library(DT)
   cat("Correlations of ",x$y," with \n")
 
   varNames <- x$df$variable
@@ -41,16 +73,13 @@ print.ryx <- function(x){
   df
 }
 
-print(x)
-
 summary.ryx <- function(x){
   if(!inherits(x, "ryx")) stop("Must be class 'ryx'")
 
-  library(stringr)
   x_vars <- ""
 
   for (name in x$x){
-    x_vars<- str_trim(paste(x_vars, name, sep = " "))
+    x_vars<- stringr::str_trim(paste(x_vars, name, sep = " "))
   }
 
   strOutput <- cat(
@@ -82,8 +111,7 @@ plot.ryx <- function(x){
   df$direction <- factor(ifelse(df$r>=0, "positive", "negative"))
   df$r <- abs(df$r)
 
-  library(ggplot2)
-  ggplot(df, aes(x = r, y = reorder(variable, r)))+
+  ggplot2::ggplot(df, aes(x = r, y = reorder(variable, r)))+
     geom_segment(aes(xend = 0, yend = variable),
                  color = "grey")+
     geom_point(aes(color = direction), size = 3) +
@@ -101,7 +129,13 @@ plot.ryx <- function(x){
           panel.grid.minor.x = element_blank())
 }
 
-plot(x)
+
+# test cases:
+# library(MASS)
+# x <- ryx(Boston, y="medv")
+# print(x)
+# summary(x)
+# plot(x)
 
 
 
