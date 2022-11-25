@@ -75,9 +75,8 @@ summary.ryx <- function(x){
 
 # summary(x)
 
-
 plot.ryx <- function(x){
-  if(!inherits(x, "rys")) stop("Must be class 'ryx'")
+  if(!inherits(x, "ryx")) stop("Must be class 'ryx'")
 
   df <- x$df[order(abs(as.numeric(x$df$r)), decreasing = TRUE),]
   df$direction <- factor(ifelse(df$r>=0, "positive", "negative"))
@@ -100,8 +99,9 @@ plot.ryx <- function(x){
     theme(element_line(linetype = "dashed"),
           panel.grid.major.y = element_blank(),
           panel.grid.minor.x = element_blank())
-
 }
+
+plot(x)
 
 
 
