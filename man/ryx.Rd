@@ -14,7 +14,12 @@ ryx(data, y, x)
 \item{x}{a vector of independent variables}
 }
 \value{
-a list of y, x, and a data frame reporting correlations of y with each variable in x respectively
+a list with 3 components:
+\describe{
+\item{y}{name of the outcome variable}
+\item{x}{a group of independent variables, each is paired with y to calculate correlation}
+\item{df}{data frame for overall correlations}
+}
 }
 \description{
 This package deals with correlation among variables.

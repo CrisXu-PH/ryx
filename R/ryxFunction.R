@@ -19,7 +19,12 @@
 #' @import ggplot2
 #'
 #' @export
-#' @return a list of y, x, and a data frame reporting correlations of y with each variable in x respectively
+#' @return a list with 3 components:
+#' \describe{
+#' \item{y}{name of the outcome variable}
+#' \item{x}{a group of independent variables, each is paired with y to calculate correlation}
+#' \item{df}{data frame for overall correlations}
+#' }
 #'
 #' @examples
 #' \dontrun{

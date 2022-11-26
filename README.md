@@ -1,10 +1,12 @@
 
 # ryx
 
-<!-- badges: start -->
-<!-- badges: end -->
+![](man/figures/background.jpg)
 
-The goal of ryx is to calculate correlations between y and each variable in x
+This package deals with correlation among variables. \par
+ryx calculates correlations between one outcome variable and a group \par
+of independent variables, respectively, as well as significance of \par
+the correlations.
 
 ## Installation
 
@@ -21,7 +23,7 @@ if (!require("remotes")){
   install.packages("remotes")
 }
 
-remotes::install_github(<github link>)
+remotes::install_github("CrisXu-PH/ryx")
 ```
 
 ## Example
