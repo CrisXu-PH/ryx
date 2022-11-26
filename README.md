@@ -3,9 +3,9 @@
 
 ![](man/figures/background.jpg)
 
-This package deals with correlation among variables. \par
-ryx calculates correlations between one outcome variable and a group \par
-of independent variables, respectively, as well as significance of \par
+This package deals with correlation among variables. 
+ryx calculates correlations between one outcome variable and a group 
+of independent variables, respectively, as well as significance of 
 the correlations.
 
 ## Installation
