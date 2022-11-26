@@ -14,21 +14,21 @@ ryx(data, y, x)
 \item{x}{a vector of independent variables}
 }
 \value{
-a data frame
+a list of y, x, and a data frame reporting correlations of y with each variable in x respectively
 }
 \description{
 This package deals with correlation among variables.
 
-\code{ryxFunction} calculates
-correlations between one outcome variable and a group of independent variables respectively
-as well as significance of the correlations. The final result is reported in the form
-of a correlation table.
+\code{ryx} calculates correlations between one outcome variable and a group
+of independent variables, respectively, as well as significance of the correlations.
+The final result is reported in the form of a correlation table.
 }
 \details{
 Three generic functions (\code{print.ryx},\code{summary.ryx},\code{plot.ryx}) are
 implemented. These functions can be used to report table of ryx class.
 }
 \examples{
+\dontrun{
 # create a ryx object
 x <- ryx(MASS::Boston, y = medv)
 
@@ -39,5 +39,6 @@ plot(x)
 
 # report error message if imput is not class ryx
 print.ryx(mtcars)
+}
 
 }

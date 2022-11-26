@@ -1,21 +1,22 @@
 Package: ryx
 Title: Calculate Correlation between an outcome varaible and a group of independent variables, respectively
-Version: 0.0.0.9000
+Version: 1.0.0.0000
 Authors@R: 
-    person("Christina", "Xu", , "cxu@wesleyan.edu", role = c("aut", "cre"))
+    person(given = "Christina", family = "Xu", email = "cxu@wesleyan.edu", role = c("aut", "cre"))
 Description: This package deals with correlation among variables.
     ryx calculates correlations between one outcome variable and a group 
     of independent variables, respectively, as well as significance of the correlations.
     The final result is reported in the form of a correlation table.
-    
     Three generic functions (i.e., print.ryx, summary.ryx, plot.ryx) are
     implemented. These functions can be used to report table of ryx class.
-
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.2
 Imports:
-  stringr
+  stringr,
   ggplot2
-  
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

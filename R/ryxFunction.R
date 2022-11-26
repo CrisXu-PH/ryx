@@ -19,9 +19,10 @@
 #' @import ggplot2
 #'
 #' @export
-#' @return a data frame
+#' @return a list of y, x, and a data frame reporting correlations of y with each variable in x respectively
 #'
 #' @examples
+#' \dontrun{
 #' # create a ryx object
 #' x <- ryx(MASS::Boston, y = medv)
 #'
@@ -32,6 +33,7 @@
 #'
 #' # report error message if imput is not class ryx
 #' print.ryx(mtcars)
+#' }
 #'
 
 ryx <- function(data, y, x){
