@@ -104,8 +104,6 @@ summary.ryx <- function(x){
 
 }
 
-# summary(x)
-
 plot.ryx <- function(x){
   if(!inherits(x, "ryx")) stop("Must be class 'ryx'")
 
@@ -130,14 +128,6 @@ plot.ryx <- function(x){
           panel.grid.major.y = element_blank(),
           panel.grid.minor.x = element_blank())
 }
-
-
-# test cases:
-# library(MASS)
-# x <- ryx(Boston, y="medv")
-# print(x)
-# summary(x)
-# plot(x)
 
 
 
