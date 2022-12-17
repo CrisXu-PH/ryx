@@ -1,8 +1,8 @@
 ---
-title: "ryx"
+title: "Introduction to ryx"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{ryx}
+  %\VignetteIndexEntry{Introduction to ryx}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -13,19 +13,11 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 ```
-# Introduction
 
-ryx function calculates correlation between one outcome variable and a group of independent variables, respectively, and evaluate these correlations with their statistical significance. 
+The `ryx` package consists of a main function, ryx, that computes correlation and returns a data frame of ryx class, and three other generic functions that supports examination of the returned data frame.
 
-
-# Example 
-
-Below is an example code of how to use this package
-
-
-```{r setup}
+```{r, eval=FALSE}
 library(ryx)
-
 library(MASS)
 x <- ryx(Boston, y="medv")
 

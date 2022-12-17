@@ -1,0 +1,26 @@
+#' @title Boston Dataset
+#'
+#' @description
+#' A data frame reporting housing values in suburbs of Boston.
+#'
+#' @source
+#' This data is loaded from MASS package in R
+#'
+#' @format A data frame with 506 rows and 14 columns
+#' \describe{
+#'  \item{\code{crim}}{numeric. Per capita crime rate by town.}
+#'  \item{\code{zn}}{numeric. Proportion of residential land zoned for lots over 25,000 sq.ft.}
+#'  \item{\code{indus}}{numeric. Proportion of non-retail business acres per town.}
+#'  \item{\code{chas}}{integer. Charles River dummy variable (=1 if tract bounds river; 0 otherwise).}
+#'  \item{\code{nox}}{numeric. Nitrogen oxides concentration (parts per 10 million).}
+#'  \item{\code{rm}}{numeric. Average number of rooms per dwelling.}
+#'  \item{\code{age}}{numeric. Proportion of owner-occupied units built prior to 1940.}
+#'  \item{\code{dis}}{numeric. Weighted mean of distances to five Boston employment centers.}
+#'  \item{\code{rad}}{integer. Index of accessibility to radial highways.}
+#'  \item{\code{tax}}{numeric. full-value property-tax rate per $10,000.}
+#'  \item{\code{ptratio}}{numeric. pupil-teacher ratio by town.}
+#'  \item{\code{black}}{numeric. 1000(Bk - 0.63)^2 where Bk is the proportion of blacks by town}
+#'  \item{\code{lstat}}{numeric. Lower status of the population (percent)}
+#'  \item{\code{medv}}{numeric. Median value of owner-occupied homes in $1000s}
+#' }
+"Boston"
